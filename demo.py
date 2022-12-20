@@ -60,6 +60,8 @@ image_pair = (
     cv2.cvtColor(cv2.imread("./demo/img2.png"), cv2.COLOR_BGR2RGB) / 255,
 )
 
+print(image_pair[0])
+
 # Show example image pair
 fig, ax = plt.subplots(1, 2)
 fig.suptitle("Example Image Pair")
