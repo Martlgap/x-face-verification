@@ -5,7 +5,7 @@ from tqdm import tqdm
 
 class ArcFaceOctupletLoss:
     def __init__(self, batch_size):
-        self.model = tf.keras.models.load_model("./ArcFaceOctupletLoss.tf")
+        self.model = tf.keras.models.load_model("./demo/ArcFaceOctupletLoss.tf")
         self.batch_size = batch_size
 
     @staticmethod
@@ -15,7 +15,7 @@ class ArcFaceOctupletLoss:
         return img
 
     def __inference(self, img):
-        return self.model.inference(self.__preprocess(img))
+        return self.model.predict(self.__preprocess(img))
 
     def __call__(self, imgs):
         embs = []
