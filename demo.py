@@ -4,9 +4,9 @@
 #                                                                                                                      #
 # ==================================================================================================================== #
 
+import pickle
 from code.calculate_score import ConfidenceScoreGenerator, calculate_score
 from sklearn.metrics.pairwise import paired_cosine_distances
-import pickle
 
 
 # Load data (example embeddings from XQLFW dataset with FaceTransformer model fine-tuned with OctupletLoss)
@@ -45,10 +45,11 @@ print(
 #                                                                                                                      #
 # ==================================================================================================================== #
 
-from code.generate_maps import MapGenerator, colorblend
-from inference import ArcFaceOctupletLoss
 import matplotlib.pyplot as plt
 import cv2
+from code.generate_maps import MapGenerator, colorblend
+from demo.model import ArcFaceOctupletLoss
+
 
 # Instantiate the MapGenerator
 MapGenerator = MapGenerator(inference_fn=ArcFaceOctupletLoss(batch_size=64))

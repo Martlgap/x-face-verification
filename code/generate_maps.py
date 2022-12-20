@@ -1,8 +1,8 @@
+import cv2
 from sklearn.metrics.pairwise import paired_cosine_distances
 from scipy.spatial.distance import cdist
 import matplotlib.pyplot as plt
 import numpy as np
-import cv2
 
 
 class MapGenerator:
