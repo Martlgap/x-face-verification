@@ -24,7 +24,7 @@ Here is a sample of three generated explanation maps:
 
 - Install all requirements for Python3.9: ```pip install -r requirements.txt```
 - Download the ArcFaceOctupletLoss model from [here](https://github.com/Martlgap/octuplet-loss/releases/download/modelweights/ArcFaceOctupletLoss.tf.zip) and extract the .zip archive into the "demo" folder
-- Run the [main.py](demo/main.py) script inside the [demo](demo) folder with ```python main.py```
+- Run the [main.py](demo.py) script inside the [demo](demo) folder with ```python main.py```
 
 ### How to run the Demo in GoogleColab:
 - Open the notebook in Colab

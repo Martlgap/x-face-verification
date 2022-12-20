@@ -10,11 +10,11 @@ import pickle
 
 
 # Load data (example embeddings from XQLFW dataset with FaceTransformer model fine-tuned with OctupletLoss)
-with open("embeddings1.pkl", "rb") as f:
+with open("./demo/embeddings1.pkl", "rb") as f:
     embeddings1 = pickle.load(f)
-with open("embeddings2.pkl", "rb") as f:
+with open("./demo/embeddings2.pkl", "rb") as f:
     embeddings2 = pickle.load(f)
-with open("labels.pkl", "rb") as f:
+with open("./demo/labels.pkl", "rb") as f:
     labels = pickle.load(f)
 
 # Calculate pairwise cosine distances
@@ -55,8 +55,8 @@ MapGenerator = MapGenerator(inference_fn=ArcFaceOctupletLoss(batch_size=64))
 
 # Load an example image pair
 image_pair = (
-    cv2.cvtColor(cv2.imread("./img1.png"), cv2.COLOR_BGR2RGB) / 255,
-    cv2.cvtColor(cv2.imread("./img2.png"), cv2.COLOR_BGR2RGB) / 255,
+    cv2.cvtColor(cv2.imread("./demo/img1.png"), cv2.COLOR_BGR2RGB) / 255,
+    cv2.cvtColor(cv2.imread("./demo/img2.png"), cv2.COLOR_BGR2RGB) / 255,
 )
 
 # Show example image pair
