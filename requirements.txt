@@ -2,3 +2,6 @@ numpy~=1.23.5
 scikit-learn~=1.2.0
 scipy~=1.9.3
 opencv-python~=4.6.0.66
+matplotlib~=3.5.3
+tqdm~=4.64.1
+tensorflow-gpu==2.8.0

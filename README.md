@@ -17,16 +17,14 @@ Here is a sample of three generated explanation maps:
 # 🚀 Getting Started 🚀
 
 ### Prerequisites:
-- Find the code to generate our proposed explanation maps [here](). 
-- Find the code to calculate our proposed confidence score [here]().
-- Install all requirements for python: ```pip install -r requirements.txt```
+- Find the code to generate our proposed explanation maps [here](code/generate_maps.py). 
+- Find the code to calculate our proposed confidence score [here](code/calculate_score.py).
 
-### Explanation Maps:
-- TODO
+### How to run the Demo:
 
-### Confidence Score:
-- TODO
-
+- Install all requirements for Python3.9: ```pip install -r requirements.txt```
+- Download the ArcFaceOctupletLoss model from [here](https://github.com/Martlgap/octuplet-loss/releases/download/modelweights/ArcFaceOctupletLoss.tf.zip) and extract the .zip archive into the "demo" folder
+- Run the [main.py](demo/main.py) script inside the [demo](demo) folder with ```python main.py```
 
 # 🌎 Web-Platform 🌎
 
