@@ -22,8 +22,8 @@ def sigmoid(x, a, x0, k, b):
     return y
 
 
-class ConfidenceScoreCalculator:
-    def __init__(self, bins: int = 2000, p0k: int = 18):
+class ConfidenceScoreGenerator:
+    def __init__(self, bins: int = 2000, p0k: int = -20):
         self.bins = bins
         self.p0k = p0k
 
@@ -45,14 +45,14 @@ class ConfidenceScoreCalculator:
         counts_neg, _ = np.histogram(dists_neg, bins=self.bins, range=(0.0, 2.0), density=True)
 
         # Calculate ratio between counts of pos and negative for each bin
-        y1 = np.nan_to_num(counts_pos / (counts_pos + counts_neg), nan=1)[: int(threshold / (2 / self.bins))]
-        y2 = np.nan_to_num(counts_pos / (counts_pos + counts_neg), nan=0)[int(threshold / (2 / self.bins)) :]
+        y1 = np.nan_to_num(counts_pos / (counts_pos + counts_neg), nan=1)[:int(threshold / (2 / self.bins))]
+        y2 = np.nan_to_num(counts_pos / (counts_pos + counts_neg), nan=0)[int(threshold / (2 / self.bins)):]
         ratios = np.concatenate([y1, y2])
 
         # Fit a sigmoid curve to the ratios
         p0 = [max(ratios), threshold, self.p0k, min(ratios)]
         x = np.arange(0, 2, 2 / self.bins)
-        sigmoid_parameters, _ = curve_fit(sigmoid, x, ratios, p0, method="dogbox")
+        sigmoid_parameters, _ = curve_fit(sigmoid, x, ratios, p0, method='dogbox')
 
         return sigmoid_parameters
 
