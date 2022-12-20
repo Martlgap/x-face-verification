@@ -1,2 +1,2 @@
-import calculate_score
-import generate_maps
+from calculate_score import *
+from generate_maps import *
