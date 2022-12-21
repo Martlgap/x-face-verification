@@ -5,7 +5,7 @@
 # ==================================================================================================================== #
 
 import pickle
-from code.calculate_score import ConfidenceScoreGenerator, calculate_score
+from src import ConfidenceScoreGenerator, calculate_score
 from sklearn.metrics.pairwise import paired_cosine_distances
 
 
@@ -47,8 +47,8 @@ print(
 
 import matplotlib.pyplot as plt
 import cv2
-from code.generate_maps import MapGenerator, colorblend
-from demo.model import ArcFaceOctupletLoss
+from src import MapGenerator, colorblend
+from demo import ArcFaceOctupletLoss
 
 
 # Instantiate the MapGenerator
