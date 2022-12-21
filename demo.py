@@ -49,6 +49,7 @@ import matplotlib.pyplot as plt
 import cv2
 from src import MapGenerator, colorblend
 from demo import ArcFaceOctupletLoss
+import numpy as np
 
 
 # Instantiate the MapGenerator
@@ -56,11 +57,9 @@ MapGenerator = MapGenerator(inference_fn=ArcFaceOctupletLoss(batch_size=64))
 
 # Load an example image pair
 image_pair = (
-    cv2.cvtColor(cv2.imread("./demo/img1.png"), cv2.COLOR_BGR2RGB) / 255,
-    cv2.cvtColor(cv2.imread("./demo/img2.png"), cv2.COLOR_BGR2RGB) / 255,
+    cv2.cvtColor(cv2.imread("./demo/img1.png"), cv2.COLOR_BGR2RGB).astype(np.float32) / 255,
+    cv2.cvtColor(cv2.imread("./demo/img2.png"), cv2.COLOR_BGR2RGB).astype(np.float32) / 255,
 )
-
-print(image_pair[0])
 
 # Show example image pair
 fig, ax = plt.subplots(1, 2)
