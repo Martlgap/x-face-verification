@@ -1,7 +1,7 @@
 tensorflow-gpu==2.8.0
-opencv-python-headless~=4.6.0.66
-numpy~=1.23.5
-scikit-learn~=1.2.0
-scipy~=1.9.3
-matplotlib~=3.5.3
-tqdm~=4.64.1
+opencv-python-headless
+numpy
+scikit-learn
+scipy
+matplotlib
+tqdm
