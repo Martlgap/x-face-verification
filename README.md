@@ -35,6 +35,9 @@ unzip demo/ArcFaceOctupletLoss.tf.zip -d demo
 ```
 - Run the [demo.py](demo.py) script in Codespace
 
+### How to run the Demo in Google Colab:
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/martlgap/x-face-verification/blob/main/demo.ipynb)
+- Run the Notebook in GoogleColab
 # 🌎 Web-Platform 🌎
 
 To explore our results we published our explainable-face-verification web-platform:
