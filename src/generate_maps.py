@@ -92,8 +92,8 @@ class MapGenerator:
                 deviations = deviations / np.max(np.abs(deviations))
             return (deviations + 1.0) / 2.0
 
-        exp_map1 = plt.cm.PiYG(normalize(np.mean(exp_maps1, axis=0)))[:, :, :3]
-        exp_map2 = plt.cm.PiYG(normalize(np.mean(exp_maps2, axis=0)))[:, :, :3]
+        exp_map1 = plt.cm.PiYG(normalize(np.mean(exp_maps1, axis=0)))[:, :, :3].astype(np.float32)
+        exp_map2 = plt.cm.PiYG(normalize(np.mean(exp_maps2, axis=0)))[:, :, :3].astype(np.float32)
 
         return exp_map1, exp_map2
 
