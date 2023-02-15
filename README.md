@@ -50,14 +50,11 @@ To explore our results we published our explainable-face-verification web-platfo
 If you find our work useful, please consider a citation:
 
 ```latex
-@misc{knocheexplainable2022,
-  doi = {10.48550/ARXIV.2211.13735},
-  url = {https://arxiv.org/abs/2211.13735},
-  author = {Knoche, Martin and Teepe, Torben and Hörmann, Stefan and Rigoll, Gerhard},
-  keywords = {Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {Explainable Model-Agnostic Similarity and Confidence in Face Verification},
-  publisher = {arXiv},
-  year = {2022},
-  copyright = {arXiv.org perpetual, non-exclusive license}
+@inproceedings{knoche2023explainable,
+  title={Explainable Model-Agnostic Similarity and Confidence in Face Verification},
+  author={Knoche, Martin and Teepe, Torben and H{\"o}rmann, Stefan and Rigoll, Gerhard},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={711--718},
+  year={2023}
 }
 ```
