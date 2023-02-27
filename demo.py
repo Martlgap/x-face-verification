@@ -20,21 +20,22 @@ with open("./demo/labels.pkl", "rb") as f:
 # Calculate pairwise cosine distances
 distances = paired_cosine_distances(embeddings1, embeddings2)
 
-# Define a threshold for binary decision
-THRESHOLD = 0.2250
-
 # Initiate the confidence calculation with the distances, labels and threshold of a dataset
-ConfidenceScoreGenerator = ConfidenceScoreGenerator()
-sigmoid_parameters = ConfidenceScoreGenerator(cosine_distances=distances, labels=labels, threshold=THRESHOLD)
+sigmoid_parameters, threshold = ConfidenceScoreGenerator(bins=2000, p0k=-18)(cosine_distances=distances, labels=labels)
+
+# (Foldwise -> Use if you want to calculate the confidence scores with k-fold cross validation
+# This is what we did in the paper, to prevent using prior knowledge for the score
+# For the score calculation you then need to check to which fold the pair_id belongs to and use those sigmoid parameters)
+sigmoid_parameters_folds, threshold_folds = ConfidenceScoreGenerator(bins=2000, p0k=-18).foldwise(cosine_distances=distances, labels=labels, k_folds=10)
 
 # Calculate scores for specific pairs
 PAIR_ID = 0
 confidence_score_raw = calculate_score(sigmoid_parameters, distances[PAIR_ID])
-confidence_score = (confidence_score_raw if distances[PAIR_ID] < THRESHOLD else 1 - confidence_score_raw) * 100
+confidence_score = (confidence_score_raw if distances[PAIR_ID] < threshold else 1 - confidence_score_raw) * 100
 
 # Display result
 print(
-    f'The prediction: "{distances[PAIR_ID] < THRESHOLD}" for pair id: {PAIR_ID} '
+    f'The prediction: "{distances[PAIR_ID] < threshold}" for pair id: {PAIR_ID} '
     f"has a confidence score of: {confidence_score:.02f}%."
 )
 
