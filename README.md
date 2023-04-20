@@ -1,7 +1,7 @@
 # 👋 Welcome 👋
 To the official repo for the paper:
 
-[Explainable Model-Agnostic Similarity and Confidence in Face Verification]([https://arxiv.org/pdf/2211.13735.pdf](https://openaccess.thecvf.com/content/WACV2023W/XAI4B/html/Knoche_Explainable_Model-Agnostic_Similarity_and_Confidence_in_Face_Verification_WACVW_2023_paper.html)
+[Explainable Model-Agnostic Similarity and Confidence in Face Verification](https://openaccess.thecvf.com/content/WACV2023W/XAI4B/html/Knoche_Explainable_Model-Agnostic_Similarity_and_Confidence_in_Face_Verification_WACVW_2023_paper.html)
 
 
 # 📄 Abstract 📄
